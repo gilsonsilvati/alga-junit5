@@ -1,6 +1,7 @@
 package com.algaworks.junit.utilidade;
 
 public class Pessoa {
+
     private String nome;
     private String sobrenome;
 
@@ -13,19 +14,11 @@ public class Pessoa {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getSobrenome() {
         return sobrenome;
     }
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-
     public String getNomeCompleto() {
-        return nome + sobrenome;
+        return nome + " " + sobrenome;
     }
 }
