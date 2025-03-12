@@ -2,12 +2,14 @@ package com.algaworks.junit.utilidade;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class SaudacaoUtilTest {
 
     @Test
-    void dever_saudar_sucesso() {
+    void deverSaudarSucesso() {
 
         var saudacao = SaudacaoUtil.saudar(9);
 
@@ -15,7 +17,7 @@ class SaudacaoUtilTest {
     }
 
     @Test
-    void deve_lancar_exception() {
+    void deveLancarException() {
 
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> SaudacaoUtil.saudar(-10));
 
@@ -23,7 +25,7 @@ class SaudacaoUtilTest {
     }
 
     @Test
-    void nao_deve_lancar_exception() {
+    void naoDeveLancarException() {
 
         assertDoesNotThrow(() -> SaudacaoUtil.saudar(0));
     }
