@@ -18,6 +18,14 @@ class SaudacaoUtilTest {
     }
 
     @Test
+    void deverSaudarBomDiaApartir5h() {
+
+        var saudacao = saudar(5);
+
+        assertEquals("Bom dia", saudacao, "Saudação incorreta!");
+    }
+
+    @Test
     void deverSaudarBoaTarde() {
 
         var saudacao = saudar(15);
@@ -29,6 +37,14 @@ class SaudacaoUtilTest {
     void deverSaudarBoaNoite() {
 
         var saudacao = saudar(20);
+
+        assertEquals("Boa noite", saudacao, "Saudação incorreta!");
+    }
+
+    @Test
+    void deverSaudarBoaNoiteAte4h() {
+
+        var saudacao = saudar(4);
 
         assertEquals("Boa noite", saudacao, "Saudação incorreta!");
     }
