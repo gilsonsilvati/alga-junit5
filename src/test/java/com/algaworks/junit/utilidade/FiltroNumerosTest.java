@@ -12,9 +12,15 @@ import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class FiltroNumerosTest {
 
-    @Test
-    void deve_retornar_numeros_pares() {
+    /*
+     * Aplicando a nomenclatura do BDD para nomear métodos de teste
+     *
+     * Given, When e Then
+     * Dado, Quando, Então
+     */
 
+    @Test
+    void Dado_uma_lista_de_numeros_Quando_filtrar_por_pares_Entao_deve_retornar_numeros_pares() {
         List<Integer> numeros = Arrays.asList(1, 2, 3, 4);
         List<Integer> numerosParesEsperados = Arrays.asList(2, 4);
 
@@ -22,5 +28,15 @@ class FiltroNumerosTest {
 
 //        assertArrayEquals(numerosParesEsperados.toArray(), resultadoFiltro.toArray());
         assertIterableEquals(numerosParesEsperados, resultadoFiltro);
+    }
+
+    @Test
+    void Dado_uma_lista_de_numeros_Quando_filtrar_por_impares_Entao_deve_retornar_numeros_impares() {
+        List<Integer> numeros = Arrays.asList(1, 2, 3, 4);
+        List<Integer> numerosImparesEsperados = Arrays.asList(1, 3);
+
+        List<Integer> resultadoFiltro = FiltroNumeros.numerosImpares(numeros);
+
+        assertIterableEquals(numerosImparesEsperados, resultadoFiltro);
     }
 }
