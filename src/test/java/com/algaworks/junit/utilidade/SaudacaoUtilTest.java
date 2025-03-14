@@ -1,5 +1,6 @@
 package com.algaworks.junit.utilidade;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
@@ -8,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@DisplayName("Testes no utilitário de saudação")
 class SaudacaoUtilTest {
 
     /*
@@ -19,7 +21,8 @@ class SaudacaoUtilTest {
      */
 
     @Test
-    void deverSaudarBomDia() {
+    @DisplayName("Deve saudar com bom dia")
+    void deveSaudarBomDia() {
         // Arrange
         var horaValida = 9;
 
@@ -31,7 +34,8 @@ class SaudacaoUtilTest {
     }
 
     @Test
-    void deverSaudarBomDiaApartir5h() {
+    @DisplayName("Deve saudar com bom dia às 5 horas")
+    void deveSaudarBomDiaApartir5h() {
         var horaValida = 5;
 
         var saudacao = saudar(horaValida);
@@ -40,7 +44,8 @@ class SaudacaoUtilTest {
     }
 
     @Test
-    void deverSaudarBoaTarde() {
+    @DisplayName("Deve saudar com boa tarde")
+    void deveSaudarBoaTarde() {
         var horaValida = 15;
 
         var saudacao = saudar(horaValida);
@@ -49,7 +54,8 @@ class SaudacaoUtilTest {
     }
 
     @Test
-    void deverSaudarBoaNoite() {
+    @DisplayName("Deve saudar com boa noite")
+    void deveSaudarBoaNoite() {
         var horaValida = 20;
 
         var saudacao = saudar(horaValida);
@@ -58,7 +64,8 @@ class SaudacaoUtilTest {
     }
 
     @Test
-    void deverSaudarBoaNoiteAte4h() {
+    @DisplayName("Deve saudar com boa noite às 4 horas")
+    void deveSaudarBoaNoiteAte4h() {
         var horaValida = 4;
 
         var saudacao = saudar(horaValida);
@@ -67,6 +74,7 @@ class SaudacaoUtilTest {
     }
 
     @Test
+    @DisplayName("Deve lançar exceção")
     void deveLancarException() {
         var horaInvalida = -10;
 
@@ -77,6 +85,7 @@ class SaudacaoUtilTest {
     }
 
     @Test
+    @DisplayName("Não deve lançar exceção")
     void naoDeveLancarException() {
         var horaValida = 0;
 
