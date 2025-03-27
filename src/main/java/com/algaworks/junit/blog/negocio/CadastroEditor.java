@@ -1,8 +1,8 @@
 package com.algaworks.junit.blog.negocio;
 
+import com.algaworks.junit.blog.armazenamento.ArmazenamentoEditor;
 import com.algaworks.junit.blog.exception.EditorNaoEncontradoException;
 import com.algaworks.junit.blog.exception.RegraNegocioException;
-import com.algaworks.junit.blog.armazenamento.ArmazenamentoEditor;
 import com.algaworks.junit.blog.modelo.Editor;
 
 import java.util.Objects;
@@ -44,7 +44,7 @@ public class CadastroEditor {
     }
 
     private void verificarSeExisteEditorUsandoMesmoEmail(Editor editor) {
-        if(armazenamentoEditor.encontrarPorEmail(editor.getEmail()).isPresent()) {
+        if (armazenamentoEditor.encontrarPorEmail(editor.getEmail()).isPresent()) {
             throw new RegraNegocioException("Já existe um editor com esse e-mail " + editor.getEmail());
         }
     }
@@ -55,7 +55,7 @@ public class CadastroEditor {
     }
 
     private void verificarSeExisteEditorUsandoMesmoEmailComIdDiferente(Editor editorAtualizado) {
-        if(armazenamentoEditor.encontrarPorEmailComIdDiferenteDe(
+        if (armazenamentoEditor.encontrarPorEmailComIdDiferenteDe(
                 editorAtualizado.getEmail(),
                 editorAtualizado.getId()).isPresent()) {
             throw new RegraNegocioException("Já existe um editor com esse e-mail " + editorAtualizado.getEmail());

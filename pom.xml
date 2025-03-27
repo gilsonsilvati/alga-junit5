@@ -14,27 +14,36 @@
         <java.version>17</java.version>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.source>17</maven.compiler.source>
+
+        <commons-email.version>1.5</commons-email.version>
+        <junit-jupiter.version>5.10.1</junit-jupiter.version>
+        <mockito.version>5.14.2</mockito.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-email</artifactId>
-            <version>1.5</version>
+            <version>${commons-email.version}</version>
         </dependency>
 
-        <!-- Test -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.10.1</version>
+            <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>5.14.2</version>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
